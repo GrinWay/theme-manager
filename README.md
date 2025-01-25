@@ -1,7 +1,7 @@
 @grinway/theme-manager
 ======
 
-This package describes the logic of theme changing on a web application (web-site with css)
+This npm package describes the logic of theme changing on a web application (web-site with css)
 
 After installation (prerequisite)
 ------
@@ -25,6 +25,12 @@ or you can set colors by setting "bgColor", "color"
 > themeManager will only `READ` css variables of `body[data-themeManager.themePrefix-theme]`
 
 You can always get won theme colors via `callback` using `set` method
+
+Installation
+------
+```console
+npm i @grinway/theme-manager
+```
 
 Usage
 ------
