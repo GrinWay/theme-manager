@@ -102,6 +102,11 @@ Your css variables must be like this
   --my-scope-theme-color: #??????;
 }
 
+body {
+  background-color: var(--my-scope-theme-bg-color);
+  color: var(--my-scope-theme-color);
+}
+
 body[data-my-scope-theme="light"] {
   --my-scope-theme-bg-color: #??????;
   --my-scope-theme-color: #??????;
