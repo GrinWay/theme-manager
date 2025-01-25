@@ -1,0 +1,30 @@
+{
+  "name": "@grinway/theme-manager",
+  "version": "1.0.0",
+  "description": "This package sets themes to web application (with css variables)",
+  "keywords": [
+    "npm",
+    "css",
+    "theme",
+    "web-theme",
+    "theme-manager"
+  ],
+  "homepage": "https://github.com/GrinWay/theme-manager#readme",
+  "bugs": {
+    "url": "https://github.com/GrinWay/theme-manager/issues"
+  },
+  "files": [
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GrinWay/theme-manager.git"
+  },
+  "license": "MIT",
+  "author": "Grigory Koblitskiy <grin180898@outlook.com>",
+  "main": "dist/main.js",
+  "scripts": {},
+  "dependencies": {
+    "change-case": "^5.4.4"
+  }
+}
