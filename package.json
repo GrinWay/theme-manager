@@ -1,6 +1,6 @@
 {
   "name": "@grinway/theme-manager",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "This package sets themes to web application (with css variables)",
   "keywords": [
     "npm",
