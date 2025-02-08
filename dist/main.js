@@ -11,8 +11,7 @@ import * as changeCase from "change-case"
  */
 class ThemeManager {
     constructor() {
-        this.bodyEl = document.querySelector('body')
-        this.rootEl = document.querySelector(':root')
+        this.#refreshElements()
     }
 
     /**
@@ -58,6 +57,8 @@ class ThemeManager {
      * @param callback callback Use to get the won theme some color: themeManager.getStyleProp(wonThemeEl, themeManager.themeBgColorCssVar) for instance
      */
     set({ theme, bgColor, color, callback }) {
+        this.#refreshElements()
+
         if (typeChecker.isNotFunction(callback)) {
             callback = wonThemeEl => {
             }
@@ -128,6 +129,19 @@ class ThemeManager {
     #getDatasetThemeKey() {
         const themePrefix = changeCase.camelCase(this.themePrefix)
         return `${themePrefix}Theme`
+    }
+
+    #refreshElements() {
+        this.#refreshBody()
+        this.#refreshRoot()
+    }
+
+    #refreshBody() {
+        this.bodyEl = document.querySelector('body')
+    }
+
+    #refreshRoot() {
+        this.rootEl = document.querySelector(':root')
     }
 }
 
