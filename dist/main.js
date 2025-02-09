@@ -15,7 +15,7 @@ class ThemeManager {
     }
 
     /**
-     * PREFIX FOR body[data-<this.themePrefix>-theme]
+     * PREFIX FOR html[data-<this.themePrefix>-theme]
      */
     get themePrefix() {
         return 'app'
@@ -68,8 +68,8 @@ class ThemeManager {
 
         // theme string always wins over others
         if (typeChecker.isString(theme)) {
-            this.#setBodyStyle({ theme })
-            wonThemeEl = this.bodyEl
+            this.#setHtmlStyle({ theme })
+            wonThemeEl = this.htmlEl
             callback(wonThemeEl)
             return this
         }
@@ -110,9 +110,9 @@ class ThemeManager {
         return true
     }
 
-    #setBodyStyle({ theme }) {
+    #setHtmlStyle({ theme }) {
         if (typeChecker.isString(theme)) {
-            this.bodyEl.dataset[this.#getDatasetThemeKey()] = theme
+            this.htmlEl.dataset[this.#getDatasetThemeKey()] = theme
         }
         return this
     }
@@ -121,7 +121,7 @@ class ThemeManager {
         const bgColorWasSet = this.setStyleProp(this.rootEl, this.themeBgColorCssVar, bgColor)
         const colorWasSet = this.setStyleProp(this.rootEl, this.themeColorCssVar, color)
         if (true === bgColorWasSet || true === colorWasSet) {
-            this.bodyEl.dataset[this.#getDatasetThemeKey()] = ''
+            this.htmlEl.dataset[this.#getDatasetThemeKey()] = ''
         }
         return this
     }
@@ -132,12 +132,12 @@ class ThemeManager {
     }
 
     #refreshElements() {
-        this.#refreshBody()
+        this.#refreshHtml()
         this.#refreshRoot()
     }
 
-    #refreshBody() {
-        this.bodyEl = document.querySelector('body')
+    #refreshHtml() {
+        this.htmlEl = document.querySelector('html')
     }
 
     #refreshRoot() {
